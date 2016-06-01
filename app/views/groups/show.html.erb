@@ -10,5 +10,12 @@
   <%= @group.score %>
 </p>
 
+<h2>Group members</h2>
+<% User.all.each do |user| %>
+		<% if @group.users.exists?(user) %>
+      <li><%= user.email -%></li>
+    <% end %>
+<% end %><br>
+
 <%= link_to 'Edit', edit_group_path(@group) %> |
 <%= link_to 'Back', groups_path %>

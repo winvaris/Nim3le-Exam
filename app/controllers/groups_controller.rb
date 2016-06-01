@@ -26,6 +26,9 @@ class GroupsController < ApplicationController
   def create
     @group = Group.new(group_params)
 
+    @users = User.find(params[:users_id])
+    @group.users = @users
+
     respond_to do |format|
       if @group.save
         format.html { redirect_to @group, notice: 'Group was successfully created.' }
@@ -40,6 +43,9 @@ class GroupsController < ApplicationController
   # PATCH/PUT /groups/1
   # PATCH/PUT /groups/1.json
   def update
+    @users = User.find(params[:users_id])
+    @group.users = @users
+    
     respond_to do |format|
       if @group.update(group_params)
         format.html { redirect_to @group, notice: 'Group was successfully updated.' }

@@ -19,6 +19,17 @@
     <%= f.label :score %><br>
     <%= f.number_field :score %>
   </div>
+  <% User.all.each do |user| %>
+      <li>
+        <% if @group.users.exists?(user) %>
+          <%= check_box_tag 'users_id[]', user.id, true %>
+          <%= user.email -%>
+        <% else %>
+          <%= check_box_tag 'users_id[]', user.id %>
+          <%= user.email -%>
+        <% end %>
+      </li>
+  <% end %><br>
   <div class="actions">
     <%= f.submit %>
   </div>
