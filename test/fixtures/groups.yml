@@ -2,8 +2,8 @@
 
 one:
   group_name: MyString
-  score_integer: MyString
+  score: 1
 
 two:
   group_name: MyString
-  score_integer: MyString
+  score: 1
