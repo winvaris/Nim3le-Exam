@@ -1,0 +1,12 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Users</h1>
+
+<% @users = User.all %>
+<% @users.each do |user| %>
+  <%= user.email %><br/>
+<% end %>
+
+<br>
+
+<%= link_to 'Groups List', groups_path %>

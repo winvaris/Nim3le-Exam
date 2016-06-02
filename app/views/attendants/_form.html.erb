@@ -1,0 +1,49 @@
+<%= form_for(@attendant) do |f| %>
+  <% if @attendant.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@attendant.errors.count, "error") %> prohibited this attendant from being saved:</h2>
+
+      <ul>
+      <% @attendant.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :first_name %><br>
+    <%= f.text_field :first_name %>
+  </div>
+  <div class="field">
+    <%= f.label :last_name %><br>
+    <%= f.text_field :last_name %>
+  </div>
+  <div class="field">
+    <%= f.label :citizen_id %><br>
+    <%= f.text_field :citizen_id %>
+  </div>
+  <div class="field">
+    <%= f.label :login %><br>
+    <%= f.text_field :login %>
+  </div>
+  <div class="field">
+    <%= f.label :password %><br>
+    <%= f.text_field :password %>
+  </div>
+  <div class="field">
+    <%= f.label :attendant_type %><br>
+    <%= f.text_field :attendant_type %>
+  </div>
+  <div class="field">
+    <%= f.label :attendant_type_id %><br>
+    <%= f.text_field :attendant_type_id %>
+  </div>
+  <div class="field">
+    <%= f.label :dept_name %><br>
+    <%= f.text_field :dept_name %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

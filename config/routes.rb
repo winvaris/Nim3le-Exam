@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  resources :attendants
+  get 'users/index'
+  match '/users',   to: 'users#index',   via: 'get'
   devise_for :users
   resources :groups
   root to: 'groups#index'

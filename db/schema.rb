@@ -11,11 +11,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160601185111) do
+ActiveRecord::Schema.define(version: 20160602061726) do
 
   create_table "Groups_Users", id: false, force: :cascade do |t|
     t.integer "group_id", null: false
     t.integer "user_id",  null: false
+  end
+
+  create_table "attendants", force: :cascade do |t|
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "citizen_id"
+    t.string   "login"
+    t.string   "password"
+    t.string   "attendant_type"
+    t.string   "attendant_type_id"
+    t.string   "dept_name"
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
   end
 
   create_table "groups", force: :cascade do |t|
