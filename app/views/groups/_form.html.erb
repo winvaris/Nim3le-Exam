@@ -19,15 +19,14 @@
     <%= f.label :score %><br>
     <%= f.number_field :score %>
   </div>
-  <% User.all.each do |user| %>
+  <% Attendant.all.each do |attendant| %>
       <li>
-        <% if @group.users.exists?(user) %>
-          <%= check_box_tag 'users_id[]', user.id, true %>
-          <%= user.email -%>
+        <% if @group.attendants.exists?(attendant) %>
+          <%= check_box_tag 'attendants_id[]', attendant.id, true %>
         <% else %>
-          <%= check_box_tag 'users_id[]', user.id %>
-          <%= user.email -%>
+          <%= check_box_tag 'attendants_id[]', attendant.id %>
         <% end %>
+        <%= attendant.first_name -%>
       </li>
   <% end %><br>
   <div class="actions">

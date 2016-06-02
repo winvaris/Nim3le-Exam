@@ -16,7 +16,7 @@
     <% @groups.each do |group| %>
       <tr>
         <td><%= group.group_name %></td>
-        <td><%= group.users.count %></td>
+        <td><%= group.attendants.count %></td>
         <td><%= group.score %></td>
         <td><%= link_to 'Show', group %></td>
         <td><%= link_to 'Edit', edit_group_path(group) %></td>
@@ -30,3 +30,4 @@
 
 <%= link_to 'New Group', new_group_path %>
 <%= link_to 'Users List', users_path %>
+<%= link_to 'Attendants List', attendants_path %>

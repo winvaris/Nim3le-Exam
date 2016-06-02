@@ -11,9 +11,9 @@
 </p>
 
 <h2>Group members</h2>
-<% User.all.each do |user| %>
-		<% if @group.users.exists?(user) %>
-      <li><%= user.email -%></li>
+<% Attendant.all.each do |attendant| %>
+		<% if @group.attendants.exists?(attendant) %>
+      <li><%= link_to attendant.first_name, attendant -%></li>
     <% end %>
 <% end %><br>
 
