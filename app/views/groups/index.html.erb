@@ -4,6 +4,10 @@
   <%= text_field_tag :filter_value %>
   <%= radio_button_tag(:radio_type, "name") %>
     <%= label_tag(:name, "Group Name") %>
+  <%= radio_button_tag(:radio_type, "greater") %>
+    <%= label_tag(:score, "Group Score >= n") %>
+  <%= radio_button_tag(:radio_type, "lesser") %>
+    <%= label_tag(:score, "Group Score <= n") %>
   <%= submit_tag 'Filter' %>
 <% end %>
 

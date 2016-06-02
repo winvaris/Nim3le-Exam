@@ -7,9 +7,14 @@ class GroupsController < ApplicationController
   def index
     if params[:radio_type] == "name" && params[:filter_value] != ""
       @groups = Group.where({ group_name: params[:filter_value]})
+    elsif params[:radio_type] == "greater" && params[:filter_value] != ""
+      @groups = Group.where({ score: params[:filter_value].to_i..Float::INFINITY})
+    elsif params[:radio_type] == "lesser" && params[:filter_value] != ""
+      @groups = Group.where({ score: -Float::INFINITY..params[:filter_value].to_i})
     else
       @groups = Group.all
     end
+    logger.debug params[:filter_value].to_i
   end
 
   # GET /groups/1
