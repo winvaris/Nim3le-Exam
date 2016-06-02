@@ -1,18 +1,29 @@
 <p id="notice"><%= notice %></p>
 
+<%= form_tag '', :method => :get do %>
+  <%= text_field_tag :filter_value %>
+  <%= radio_button_tag(:radio_type, "name") %>
+    <%= label_tag(:first_name, "First Name") %>
+  <%= radio_button_tag(:radio_type, "id") %>
+    <%= label_tag(:user_type_id, "Student ID") %>
+  <%= submit_tag 'Filter' %>
+<% end %>
+
+<h5>For group filtering please go to GroupsList page</h5>
+
 <h1>Listing Attendants</h1>
 
 <table>
   <thead>
     <tr>
-      <th>First name</th>
-      <th>Last name</th>
-      <th>Citizen</th>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>Citizen ID</th>
       <th>Login</th>
       <th>Password</th>
-      <th>Attendant type</th>
-      <th>Attendant type</th>
-      <th>Dept name</th>
+      <th>Attendant Type</th>
+      <th>Attendant Type ID</th>
+      <th>Department Name</th>
       <th colspan="3"></th>
     </tr>
   </thead>

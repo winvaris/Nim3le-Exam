@@ -5,7 +5,14 @@ class AttendantsController < ApplicationController
   # GET /attendants
   # GET /attendants.json
   def index
-    @attendants = Attendant.all
+    if params[:radio_type] == "name" && params[:filter_value] != ""
+      @attendants = Attendant.where({ first_name: params[:filter_value]})
+    elsif params[:radio_type] == "id" && params[:filter_value] != ""
+      @attendants = Attendant.where({ attendant_type_id: params[:filter_value]})
+    else
+      @attendants = Attendant.all
+    end
+    logger.debug 'test'
   end
 
   # GET /attendants/1
