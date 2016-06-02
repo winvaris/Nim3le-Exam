@@ -1,5 +1,12 @@
 <p id="notice"><%= notice %></p>
 
+<%= form_tag '', :method => :get do %>
+  <%= text_field_tag :filter_value %>
+  <%= radio_button_tag(:radio_type, "name") %>
+    <%= label_tag(:name, "Group Name") %>
+  <%= submit_tag 'Filter' %>
+<% end %>
+
 <h1>Listing Groups</h1>
 
 <table>

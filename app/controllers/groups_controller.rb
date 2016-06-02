@@ -5,7 +5,11 @@ class GroupsController < ApplicationController
   # GET /groups
   # GET /groups.json
   def index
-    @groups = Group.all
+    if params[:radio_type] == "name" && params[:filter_value] != ""
+      @groups = Group.where({ group_name: params[:filter_value]})
+    else
+      @groups = Group.all
+    end
   end
 
   # GET /groups/1
